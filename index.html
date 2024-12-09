@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynamic UI Interactions</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul class="menu-items">
+          <li><button type="button">Menu 1</button></li>
+          <li>
+            <button type="button" class="dropdown-menu">Menu 2</button>
+            <ul class="dropdown-content">
+              <li><button type="button">Link 1</button></li>
+              <li><button type="button">Link 2</button></li>
+              <li><button type="button">Link 3</button></li>
+            </ul>
+          </li>
+          <li>
+            <button type="button" class="dropdown-menu">Menu 3</button>
+            <ul class="dropdown-content hidden">
+              <li><button type="button">Link 1</button></li>
+              <li><button type="button">Link 2</button></li>
+              <li><button type="button">Link 3</button></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <script src="script.js" defer></script>
+  </body>
+</html>

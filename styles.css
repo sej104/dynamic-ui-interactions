@@ -1,0 +1,103 @@
+/* CSS reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+button {
+  cursor: pointer;
+  appearance: none;
+  border: none;
+  background: transparent;
+}
+
+/* Dropdown styles */
+:root {
+  --menu-border: 1px solid #7c7c7c44;
+  --box-shadow: 0px 0px 7px 3px #e6e6e6;
+  --hover-bg-color: #d8d8d8;
+}
+
+header {
+  border-bottom: var(--menu-border);
+}
+
+.menu-items {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  list-style: none;
+  padding-left: 30px;
+}
+
+.menu-items > li > button {
+  width: 100%;
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding: 10px 0;
+}
+
+.dropdown-content {
+  position: absolute;
+  list-style: none;
+  padding: 0;
+  width: 200px;
+  box-shadow: var(--box-shadow);
+}
+
+.dropdown-content li {
+  border-bottom: var(--menu-border);
+  padding: 10px;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.dropdown-content li:hover {
+  background-color: var(--hover-bg-color);
+}
+
+.hidden {
+  display: none;
+}
