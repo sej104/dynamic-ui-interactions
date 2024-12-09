@@ -67,7 +67,8 @@ header {
 
 .menu-items {
   display: grid;
-  grid-template-columns: repeat(3, 100px);
+  grid-template-columns: 75px repeat(2, 100px);
+  gap: 20px;
   list-style: none;
   padding-left: 30px;
 }
@@ -77,6 +78,10 @@ header {
   font-size: 1.2rem;
   font-weight: 500;
   padding: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
 }
 
 .dropdown-content {
