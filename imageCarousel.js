@@ -1,3 +1,10 @@
+const setActiveButton = (index) => {
+  const activeNavigationButton = document.querySelector("#active");
+  activeNavigationButton.id = "";
+  const navigationButton = document.querySelector(`[data-index='${index}']`);
+  navigationButton.id = "active";
+};
+
 const images = document.querySelectorAll(".container div");
 const lastImagePositionValue = (images.length - 1) * 800;
 
@@ -11,6 +18,9 @@ const displayPreviousImage = () => {
       image.style.right = `${positionValue}px`;
     }
   });
+
+  const navigationIndex = parseInt(images[0].style.right, 10) / 800;
+  setActiveButton(navigationIndex);
 };
 
 const displayNextImage = () => {
@@ -25,17 +35,17 @@ const displayNextImage = () => {
       image.style.right = `${positionValue}px`;
     }
   });
+
+  const navigationIndex = parseInt(images[0].style.right, 10) / 800;
+  setActiveButton(navigationIndex);
 };
 
 const selectImage = (e) => {
   const navigationButton = e.target.closest("button");
   if (!navigationButton) return;
 
-  const activeNavigationButton = document.querySelector("#active");
-  activeNavigationButton.id = "";
-
-  navigationButton.id = "active";
   const index = navigationButton.dataset.index;
+  setActiveButton(index);
 
   images.forEach((image) => {
     image.style.right = `${index * 800}px`;
@@ -55,4 +65,4 @@ rightChevron.addEventListener("click", displayNextImage);
 const navigationContainer = document.querySelector(".navigation");
 navigationContainer.addEventListener("click", selectImage);
 
-switchSlides();
+// switchSlides();
