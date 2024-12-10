@@ -27,6 +27,21 @@ const displayNextImage = () => {
   });
 };
 
+const selectImage = (e) => {
+  const navigationButton = e.target.closest("button");
+  if (!navigationButton) return;
+
+  const activeNavigationButton = document.querySelector("#active");
+  activeNavigationButton.id = "";
+
+  navigationButton.id = "active";
+  const index = navigationButton.dataset.index;
+
+  images.forEach((image) => {
+    image.style.right = `${index * 800}px`;
+  });
+};
+
 const switchSlides = () => {
   setInterval(displayNextImage, 5000);
 };
@@ -36,5 +51,8 @@ leftChevron.addEventListener("click", displayPreviousImage);
 
 const rightChevron = document.querySelector("#right-chevron");
 rightChevron.addEventListener("click", displayNextImage);
+
+const navigationContainer = document.querySelector(".navigation");
+navigationContainer.addEventListener("click", selectImage);
 
 switchSlides();
