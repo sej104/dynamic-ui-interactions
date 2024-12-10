@@ -52,17 +52,27 @@ const selectImage = (e) => {
   });
 };
 
-const switchSlides = () => {
-  setInterval(displayNextImage, 5000);
+let slideShow = setInterval(displayNextImage, 5000);
+
+const resetSlideShow = () => {
+  clearInterval(slideShow);
+  slideShow = setInterval(displayNextImage, 5000);
 };
 
 const leftChevron = document.querySelector("#left-chevron");
-leftChevron.addEventListener("click", displayPreviousImage);
+leftChevron.addEventListener("click", () => {
+  resetSlideShow();
+  displayPreviousImage();
+});
 
 const rightChevron = document.querySelector("#right-chevron");
-rightChevron.addEventListener("click", displayNextImage);
+rightChevron.addEventListener("click", () => {
+  resetSlideShow();
+  displayNextImage();
+});
 
 const navigationContainer = document.querySelector(".navigation");
-navigationContainer.addEventListener("click", selectImage);
-
-// switchSlides();
+navigationContainer.addEventListener("click", (e) => {
+  resetSlideShow();
+  selectImage(e);
+});
