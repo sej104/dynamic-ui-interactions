@@ -1,0 +1,84 @@
+/* CSS reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+button {
+  cursor: pointer;
+  appearance: none;
+  border: none;
+  background: transparent;
+}
+
+/* Image Carousel styles */
+:root {
+  --main-border: 1px solid #7c7c7c44;
+}
+
+.frame {
+  height: 300px;
+  width: 300px;
+  position: relative;
+}
+
+.container {
+  position: absolute;
+  display: flex;
+}
+
+.container div {
+  height: 300px;
+  width: 300px;
+}
+
+img {
+  height: 100%;
+}
