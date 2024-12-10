@@ -27,8 +27,8 @@ const displayNextImage = () => {
   });
 };
 
-const leftButton = document.querySelector("#left-button");
-const rightButton = document.querySelector("#right-button");
+const leftChevron = document.querySelector("#left-chevron");
+const rightChevron = document.querySelector("#right-chevron");
 
-leftButton.addEventListener("click", displayPreviousImage);
-rightButton.addEventListener("click", displayNextImage);
+leftChevron.addEventListener("click", displayPreviousImage);
+rightChevron.addEventListener("click", displayNextImage);

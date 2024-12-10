@@ -51,12 +51,12 @@ h6 {
   isolation: isolate;
 }
 
-/* button {
+button {
   cursor: pointer;
   appearance: none;
   border: none;
   background: transparent;
-} */
+}
 
 /* Image Carousel styles */
 :root {
@@ -71,35 +71,20 @@ h6 {
 
 .frame {
   position: relative;
-  border: 2px solid blue;
   overflow: hidden;
+  margin: 15px;
 }
 
 .container {
   position: absolute;
   display: flex;
-  /* border: 2px solid red; */
 }
 
 .container div {
   position: relative;
-  /* border: 2px solid lime; */
 }
 
 img {
   height: 100%;
   width: 100%;
-}
-
-button {
-  position: absolute;
-}
-
-#left-button,
-#right-button {
-  bottom: 50%;
-}
-
-#right-button {
-  right: 0;
 }
