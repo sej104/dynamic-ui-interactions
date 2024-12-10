@@ -1,29 +1,34 @@
-const leftButton = document.querySelector("#left-button");
-const rightButton = document.querySelector("#right-button");
 const images = document.querySelectorAll(".container div");
+const lastImagePositionValue = (images.length - 1) * 800;
 
-leftButton.addEventListener("click", () => {
+const displayPreviousImage = () => {
   images.forEach((image) => {
-    const amount = parseInt(image.style.right, 10) - 800;
+    const positionValue = parseInt(image.style.right, 10) - 800;
 
-    if (isNaN(amount) || amount < 0) {
-      image.style.right = "3200px";
+    if (Number.isNaN(positionValue) || positionValue < 0) {
+      image.style.right = `${lastImagePositionValue}px`;
     } else {
-      image.style.right = `${amount}px`;
+      image.style.right = `${positionValue}px`;
     }
   });
-});
+};
 
-rightButton.addEventListener("click", () => {
+const displayNextImage = () => {
   images.forEach((image) => {
-    const amount = parseInt(image.style.right, 10) + 800;
+    const positionValue = parseInt(image.style.right, 10) + 800;
 
-    if (!amount) {
+    if (Number.isNaN(positionValue)) {
       image.style.right = "800px";
-    } else if (amount === 4000) {
+    } else if (positionValue > lastImagePositionValue) {
       image.style.right = "0px";
     } else {
-      image.style.right = `${amount}px`;
+      image.style.right = `${positionValue}px`;
     }
   });
-});
+};
+
+const leftButton = document.querySelector("#left-button");
+const rightButton = document.querySelector("#right-button");
+
+leftButton.addEventListener("click", displayPreviousImage);
+rightButton.addEventListener("click", displayNextImage);
