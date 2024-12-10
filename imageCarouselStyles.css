@@ -71,16 +71,20 @@ button {
 
 .frame {
   position: relative;
-  border: 3px solid blue;
+  border: 2px solid blue;
+  overflow: hidden;
 }
 
 .container {
   position: absolute;
   display: flex;
+  /* border: 2px solid red; */
 }
 
 .container div {
-  border: 3px solid lime;
+  position: relative;
+  /* border: 2px solid lime; */
+  right: 1600px;
 }
 
 img {
