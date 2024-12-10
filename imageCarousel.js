@@ -27,8 +27,14 @@ const displayNextImage = () => {
   });
 };
 
-const leftChevron = document.querySelector("#left-chevron");
-const rightChevron = document.querySelector("#right-chevron");
+const switchSlides = () => {
+  setInterval(displayNextImage, 5000);
+};
 
+const leftChevron = document.querySelector("#left-chevron");
 leftChevron.addEventListener("click", displayPreviousImage);
+
+const rightChevron = document.querySelector("#right-chevron");
 rightChevron.addEventListener("click", displayNextImage);
+
+switchSlides();
