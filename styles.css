@@ -56,13 +56,13 @@ button {
 
 /* Dropdown styles */
 :root {
-  --menu-border: 1px solid #7c7c7c44;
+  --main-border: 1px solid #7c7c7c44;
   --box-shadow: 0px 0px 7px 3px #e6e6e6;
   --hover-bg-color: #d8d8d8;
 }
 
 header {
-  border-bottom: var(--menu-border);
+  border-bottom: var(--main-border);
 }
 
 .menu-items {
@@ -84,7 +84,7 @@ header {
   gap: 5px;
 }
 
-.dropdown-content {
+.drop-down-content {
   position: absolute;
   list-style: none;
   padding: 0;
@@ -92,14 +92,14 @@ header {
   box-shadow: var(--box-shadow);
 }
 
-.dropdown-content li {
-  border-bottom: var(--menu-border);
+.drop-down-content li {
+  border-bottom: var(--main-border);
   padding: 10px;
   font-weight: 400;
   cursor: pointer;
 }
 
-.dropdown-content li:hover {
+.drop-down-content li:hover {
   background-color: var(--hover-bg-color);
 }
 
